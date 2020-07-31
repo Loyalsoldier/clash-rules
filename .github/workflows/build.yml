@@ -1,0 +1,131 @@
+name: Generate rules for Clash Premium
+on:
+  schedule:
+    - cron: "30 22 * * *"
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "**/README.md"
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set variables
+        run: |
+          echo "::set-env name=RELEASE_NAME::Released on $(date +%Y%m%d%H%M)"
+          echo "::set-env name=TAG_NAME::$(date +%Y%m%d%H%M)"
+          echo "::set-env name=v2fly_reject::https://raw.githubusercontent.com/v2fly/domain-list-community/release/category-ads-all.txt"
+          echo "::set-env name=v2fly_not_cn::https://raw.githubusercontent.com/v2fly/domain-list-community/release/geolocation-!cn.txt"
+          echo "::set-env name=v2fly_cn::https://raw.githubusercontent.com/v2fly/domain-list-community/release/cn.txt"
+          echo "::set-env name=v2fly_icloud::https://raw.githubusercontent.com/v2fly/domain-list-community/release/icloud.txt"
+          echo "::set-env name=v2fly_apple::https://raw.githubusercontent.com/v2fly/domain-list-community/release/apple.txt"
+          echo "::set-env name=Loyalsoldier_reject::https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt"
+          echo "::set-env name=Loyalsoldier_proxy::https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt"
+          echo "::set-env name=Loyalsoldier_direct::https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt"
+          echo "::set-env name=felixonmars_apple::https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf"
+          echo "::set-env name=felixonmars_google::https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/google.china.conf"
+        shell: bash
+
+      - name: Checkout the "hidden" branch
+        uses: actions/checkout@v2.3.1
+        with:
+          ref: hidden
+
+      - name: Generate icloud.txt file
+        run: |
+          echo "payload:" > icloud.txt
+          curl -sSL $v2fly_icloud | grep -e "^full:" -e "^domain:" | awk -F ':' '{printf "  - |+.%s|\n", $2}' | sed "s/|/'/g" >> icloud.txt
+
+      - name: Generate google.txt file
+        run: |
+          echo "payload:" > google.txt
+          curl -sSL $felixonmars_google | awk -F '/' '{printf "  - |+.%s|\n", $2}' | sed "s/|/'/g" >> google.txt
+
+      - name: Get and add apple domains into apple.temp file
+        run: |
+          curl -sSL $felixonmars_apple | awk -F '/' '{print $2}' > apple.temp
+          curl -sSL $v2fly_apple | grep -e "^full:" -e "^domain:" | awk -F ':' '{print $2}' >> apple.temp
+
+      - name: Get and add direct domains into direct.temp file
+        run: |
+          curl -sSL $Loyalsoldier_direct | perl -ne '/^([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)+)\n/ && print "$1\n"' > direct.temp
+          curl -sSL $v2fly_cn | grep -e "^full:" -e "^domain:" | awk -F ':' '{print $2}' >> direct.temp
+
+      - name: Get and add proxy domains into proxy.temp file
+        run: |
+          curl -sSL $Loyalsoldier_proxy | perl -ne '/^([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)+)\n/ && print "$1\n"' > proxy.temp
+          curl -sSL $v2fly_not_cn | grep -e "^full:" -e "^domain:" | perl -ne 'print if not /(.+\.cn$)/' >> proxy.temp
+
+      - name: Get and add reject domains into reject.temp file
+        run: |
+          curl -sSL $Loyalsoldier_reject | perl -ne '/^([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)+)\n/ && print "$1\n"' > reject.temp
+          curl -sSL $v2fly_reject | grep -e "^full:" -e "^domain:" | awk -F ':' '{print $2}' >> reject.temp
+
+      - name: Sort and generate redundant lists
+        run: |
+          cat apple.temp | sort --ignore-case -u > apple-list-with-redundant
+          cat direct.temp | sort --ignore-case -u > direct-list-with-redundant
+          cat proxy.temp | sort --ignore-case -u > proxy-list-with-redundant
+          cat reject.temp | sort --ignore-case -u > reject-list-with-redundant
+
+      - name: Remove redundant domains
+        run: |
+          chmod +x findRedundantDomain.py
+          ./findRedundantDomain.py ./apple-list-with-redundant ./apple-list-deleted-unsort
+          ./findRedundantDomain.py ./direct-list-with-redundant ./direct-list-deleted-unsort
+          ./findRedundantDomain.py ./proxy-list-with-redundant ./proxy-list-deleted-unsort
+          ./findRedundantDomain.py ./reject-list-with-redundant ./reject-list-deleted-unsort
+          [ ! -f "apple-list-deleted-unsort" ] && touch apple-list-deleted-unsort
+          [ ! -f "direct-list-deleted-unsort" ] && touch direct-list-deleted-unsort
+          [ ! -f "proxy-list-deleted-unsort" ] && touch proxy-list-deleted-unsort
+          [ ! -f "reject-list-deleted-unsort" ] && touch reject-list-deleted-unsort
+          sort ./apple-list-deleted-unsort > ./apple-list-deleted-sort
+          sort ./direct-list-deleted-unsort > ./direct-list-deleted-sort
+          sort ./proxy-list-deleted-unsort > ./proxy-list-deleted-sort
+          sort ./reject-list-deleted-unsort > ./reject-list-deleted-sort
+          diff ./apple-list-deleted-sort ./apple-list-with-redundant | awk '/^>/{print $2}' > ./apple-list-without-redundant
+          diff ./direct-list-deleted-sort ./direct-list-with-redundant | awk '/^>/{print $2}' > ./direct-list-without-redundant
+          diff ./proxy-list-deleted-sort ./proxy-list-with-redundant | awk '/^>/{print $2}' > ./proxy-list-without-redundant
+          diff ./reject-list-deleted-sort ./reject-list-with-redundant | awk '/^>/{print $2}' > ./reject-list-without-redundant
+
+      - name: Write to files
+        run: |
+          echo "payload:" > apple.txt
+          echo "payload:" > direct.txt
+          echo "payload:" > proxy.txt
+          echo "payload:" > reject.txt
+          cat apple-list-without-redundant | awk '{printf "  - |+.%s|\n", $1}' | sed "s/|/'/g" >> apple.txt
+          cat direct-list-without-redundant | awk '{printf "  - |+.%s|\n", $1}' | sed "s/|/'/g" >> direct.txt
+          cat proxy-list-without-redundant | awk '{printf "  - |+.%s|\n", $1}' | sed "s/|/'/g" >> proxy.txt
+          cat reject-list-without-redundant | awk '{printf "  - |+.%s|\n", $1}' | sed "s/|/'/g" >> reject.txt
+
+      - name: Move files to publish directory
+        run: |
+          mkdir -p publish
+          install -p {apple,icloud,google,proxy,direct,reject}.txt ./publish/
+
+      - name: Release and upload assets
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ env.RELEASE_NAME }}
+          tag_name: ${{ env.TAG_NAME }}
+          draft: false
+          prerelease: false
+          files: |
+            ./publish/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Git push assets to "release" branch
+        run: |
+          cd publish
+          git init
+          git config --local user.name "actions"
+          git config --local user.email "action@github.com"
+          git checkout -b release
+          git add .
+          git commit -m "${{ env.RELEASE_NAME }}"
+          git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          git push -f -u origin release
