@@ -102,7 +102,7 @@ jobs:
           cat proxy-list-without-redundant | awk '{printf "  - |+.%s|\n", $1}' | sed "s/|/'/g" >> proxy.txt
           cat reject-list-without-redundant | awk '{printf "  - |+.%s|\n", $1}' | sed "s/|/'/g" >> reject.txt
 
-      - name: Generate China CIDR list
+      - name: Generate cncidr.txt file
         run: |
           echo "payload:" > cncidr.txt
           curl -sSL ${ipipnet_chinaiplist} | perl -ne '/^(\d{1,3}(\.\d{1,3}){3}\/\d{1,2})/ && print "  - |$1|\n"' | sed "s/|/'/g" >> cncidr.txt
