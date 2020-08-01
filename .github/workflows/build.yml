@@ -26,6 +26,7 @@ jobs:
           echo "::set-env name=Loyalsoldier_direct::https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt"
           echo "::set-env name=felixonmars_apple::https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf"
           echo "::set-env name=felixonmars_google::https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/google.china.conf"
+          echo "::set-env name=17mon_chinaiplist::https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt"
         shell: bash
 
       - name: Checkout the "hidden" branch
@@ -101,7 +102,7 @@ jobs:
           cat proxy-list-without-redundant | awk '{printf "  - |+.%s|\n", $1}' | sed "s/|/'/g" >> proxy.txt
           cat reject-list-without-redundant | awk '{printf "  - |+.%s|\n", $1}' | sed "s/|/'/g" >> reject.txt
 
-      - name: Generate China CIDR list
+      - name: Generate cncidr.txt file
         run: |
           echo "payload:" > cncidr.txt
           curl -sSL ${17mon_chinaiplist} | perl -ne '/^(\d{1,3}(\.\d{1,3}){3}\/\d{1,2})/ && print "  - |$1|\n"' | sed "s/|/'/g" >> cncidr.txt
