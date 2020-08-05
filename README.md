@@ -122,6 +122,7 @@ rule-providers:
 ```yaml
 rules:
   - PROCESS-NAME,v2ray,DIRECT
+  - PROCESS-NAME,Surge%203,DIRECT
   - PROCESS-NAME,ss-local,DIRECT
   - PROCESS-NAME,privoxy,DIRECT
   - PROCESS-NAME,trojan,DIRECT
