@@ -115,7 +115,7 @@ rule-providers:
 #### Rules 配置方式
 
 - 以下配置中的 `PROCESS-NAME` 规则类型**只能**在 **ClashX Pro** 中使用，其余版本均不能使用，需要手动删除。
-- 如果希望使用 DNS 来解析未命中 RULE-SET 中域名类型规则的域名，而不是直接走代理，请删除 `cncidr` 行尾的 `,no-resolve`。
+- 如果希望使用 DNS 来解析未命中域名类型规则的域名，而不是直接走代理，请删除 `cncidr` 行尾的 `,no-resolve`。
 - 以下配置中，除了 `DIRECT` 和 `REJECT` 是默认存在于 Clash 中的 policy（路由策略/流量处理策略），其余均为自定义 policy，对应配置文件中 `proxies` 或 `proxy-groups` 中的 `name`。如你直接使用下面的 `rules` 规则，则需要在 `proxies` 或 `proxy-groups` 中手动配置一个 `name` 为 `PROXY` 的 policy。
 - 如你希望 Apple、iCloud 和 Google 列表中的域名使用代理，则把 policy 由 `DIRECT` 改为 `PROXY`，以此类推，举一反三。
 
@@ -145,7 +145,6 @@ rules:
   - RULE-SET,direct,DIRECT
   - RULE-SET,lancidr,DIRECT,no-resolve
   - RULE-SET,cncidr,DIRECT,no-resolve
-  - GEOIP,CN,DIRECT
   - MATCH,PROXY
 ```
 
