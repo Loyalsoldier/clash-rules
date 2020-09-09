@@ -130,7 +130,7 @@ rules:
   - PROCESS-NAME,naive,DIRECT
   - PROCESS-NAME,Thunder,DIRECT
   - PROCESS-NAME,DownloadService,DIRECT
-  - PROCESS-NAME,qbittorrent,DIRECT
+  - PROCESS-NAME,qBittorrent,DIRECT
   - PROCESS-NAME,Transmission,DIRECT
   - PROCESS-NAME,fdm,DIRECT
   - PROCESS-NAME,aria2c,DIRECT
