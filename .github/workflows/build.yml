@@ -14,16 +14,16 @@ jobs:
     steps:
       - name: Set variables
         run: |
-          echo "::set-env name=RELEASE_NAME::Released on $(date +%Y%m%d%H%M)"
-          echo "::set-env name=TAG_NAME::$(date +%Y%m%d%H%M)"
-          echo "::set-env name=v2fly_icloud::https://raw.githubusercontent.com/v2fly/domain-list-community/release/icloud.txt"
-          echo "::set-env name=v2fly_apple::https://raw.githubusercontent.com/v2fly/domain-list-community/release/apple.txt"
-          echo "::set-env name=Loyalsoldier_reject::https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt"
-          echo "::set-env name=Loyalsoldier_proxy::https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt"
-          echo "::set-env name=Loyalsoldier_direct::https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt"
-          echo "::set-env name=felixonmars_apple::https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf"
-          echo "::set-env name=felixonmars_google::https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/google.china.conf"
-          echo "::set-env name=ipipnet_chinaiplist::https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt"
+          echo "RELEASE_NAME=Released on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+          echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+          echo "v2fly_icloud=https://raw.githubusercontent.com/v2fly/domain-list-community/release/icloud.txt" >> $GITHUB_ENV
+          echo "v2fly_apple=https://raw.githubusercontent.com/v2fly/domain-list-community/release/apple.txt" >> $GITHUB_ENV
+          echo "Loyalsoldier_reject=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt" >> $GITHUB_ENV
+          echo "Loyalsoldier_proxy=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt" >> $GITHUB_ENV
+          echo "Loyalsoldier_direct=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt" >> $GITHUB_ENV
+          echo "felixonmars_apple=https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf" >> $GITHUB_ENV
+          echo "felixonmars_google=https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/google.china.conf" >> $GITHUB_ENV
+          echo "ipipnet_chinaiplist=https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt" >> $GITHUB_ENV
         shell: bash
 
       - name: Checkout the "hidden" branch
