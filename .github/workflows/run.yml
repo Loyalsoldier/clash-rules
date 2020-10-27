@@ -1,5 +1,6 @@
 name: Generate RULE-SET for Premium Edition of Clash
 on:
+  workflow_dispatch:
   schedule:
     - cron: "30 22 * * *"
   push:
@@ -9,7 +10,6 @@ on:
       - "**/README.md"
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Set variables
@@ -95,4 +95,4 @@ jobs:
           git add .
           git commit -m "${{ env.RELEASE_NAME }}"
           git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
-          git push -f -u origin release
+          git push -f origin release
