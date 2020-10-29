@@ -17,9 +17,12 @@ jobs:
           echo "RELEASE_NAME=Released on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
           echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
           echo "custom_icloud=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/icloud.txt" >> $GITHUB_ENV
+          echo "custom_tld_not_cn=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/tld-!cn.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_reject=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_proxy=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_direct=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt" >> $GITHUB_ENV
+          echo "Loyalsoldier_gfw=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt" >> $GITHUB_ENV
+          echo "Loyalsoldier_greatfire=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/greatfire.txt" >> $GITHUB_ENV
           echo "felixonmars_apple=https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf" >> $GITHUB_ENV
           echo "felixonmars_google=https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/google.china.conf" >> $GITHUB_ENV
           echo "ipipnet_chinaiplist=https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt" >> $GITHUB_ENV
@@ -60,6 +63,21 @@ jobs:
           echo "payload:" > reject.txt
           curl -sSL ${Loyalsoldier_reject} | perl -ne '/^([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)*)/ && print "  - |+.$1|\n"' | sed "s/|/'/g" >> reject.txt
 
+      - name: Generate gfw.txt file
+        run: |
+          echo "payload:" > gfw.txt
+          curl -sSL ${Loyalsoldier_gfw} | perl -ne '/^([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)*)/ && print "  - |+.$1|\n"' | sed "s/|/'/g" >> gfw.txt
+
+      - name: Generate greatfire.txt file
+        run: |
+          echo "payload:" > greatfire.txt
+          curl -sSL ${Loyalsoldier_greatfire} | perl -ne '/^([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)*)/ && print "  - |+.$1|\n"' | sed "s/|/'/g" >> greatfire.txt
+
+      - name: Generate tld-not-cn.txt file
+        run: |
+          echo "payload:" > tld-not-cn.txt
+          curl -sSL "${custom_tld_not_cn}" | perl -ne '/^domain:([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)*)/ && print "  - |+.$1|\n"' | sed "s/|/'/g" >> tld-not-cn.txt
+
       - name: Generate cncidr.txt file
         run: |
           echo "payload:" > cncidr.txt
@@ -68,7 +86,7 @@ jobs:
       - name: Move files to publish directory
         run: |
           mkdir -p publish
-          install -p {apple,icloud,google,proxy,direct,reject,cncidr,lancidr}.txt ./publish/
+          install -p {apple,icloud,google,proxy,direct,reject,gfw,greatfire,tld-not-cn,cncidr,lancidr}.txt ./publish/
 
       - name: Release and upload assets
         uses: softprops/action-gh-release@v1
