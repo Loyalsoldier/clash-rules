@@ -16,8 +16,7 @@ jobs:
         run: |
           echo "RELEASE_NAME=Released on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
           echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-          echo "v2fly_icloud=https://raw.githubusercontent.com/v2fly/domain-list-community/release/icloud.txt" >> $GITHUB_ENV
-          echo "v2fly_apple=https://raw.githubusercontent.com/v2fly/domain-list-community/release/apple.txt" >> $GITHUB_ENV
+          echo "custom_icloud=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/icloud.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_reject=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_proxy=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_direct=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt" >> $GITHUB_ENV
@@ -34,7 +33,7 @@ jobs:
       - name: Generate icloud.txt file
         run: |
           echo "payload:" > icloud.txt
-          curl -sSL ${v2fly_icloud} | grep -E "^(full|domain):" | awk -F ':' '{printf "  - |+.%s|\n", $2}' | sed "s/|/'/g" >> icloud.txt
+          curl -sSL ${custom_icloud} | grep -E "^(full|domain):" | awk -F ':' '{printf "  - |+.%s|\n", $2}' | sed "s/|/'/g" >> icloud.txt
 
       - name: Generate google.txt file
         run: |
@@ -43,10 +42,8 @@ jobs:
 
       - name: Generate apple.txt file
         run: |
-          curl -sSL ${felixonmars_apple} | perl -ne '/^server=\/([^\/]+)\// && print "$1\n"' > apple.temp
-          curl -sSL ${v2fly_apple} | grep -E "^(full|domain):" | awk -F ':' '{print $2}' >> apple.temp
           echo "payload:" > apple.txt
-          cat apple.temp | perl -ne '/^([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)*)/ && print "  - |+.$1|\n"' | sed "s/|/'/g" >> apple.txt
+          curl -sSL ${felixonmars_apple} | perl -ne '/^server=\/([^\/]+)\// && print "  - |+.$1|\n"' | sed "s/|/'/g" >> apple.txt
 
       - name: Generate direct.txt file
         run: |
