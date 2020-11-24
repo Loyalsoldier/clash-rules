@@ -47,6 +47,9 @@
 - **非中国大陆使用的顶级域名列表 tld-not-cn.txt**：
   - [https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt](https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt)
   - [https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt](https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt)
+- **Telegram 使用的 IP 地址列表 telegramcidr.txt**：
+  - [https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt](https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt)
+  - [https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt](https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt)
 - **局域网 IP 及保留 IP 地址列表 lancidr.txt**：
   - [https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt](https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt)
   - [https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt](https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt)
@@ -127,6 +130,13 @@ rule-providers:
     path: ./ruleset/tld-not-cn.yaml
     interval: 86400
 
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+
   cncidr:
     type: http
     behavior: ipcidr
@@ -176,6 +186,7 @@ rules:
   - RULE-SET,google,DIRECT
   - RULE-SET,proxy,PROXY
   - RULE-SET,direct,DIRECT
+  - RULE-SET,telegramcidr,PROXY
   - GEOIP,,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,PROXY
@@ -211,6 +222,7 @@ rules:
   - RULE-SET,tld-not-cn,PROXY
   - RULE-SET,gfw,PROXY
   - RULE-SET,greatfire,PROXY
+  - RULE-SET,telegramcidr,PROXY
   - GEOIP,AE,PROXY
   - GEOIP,AU,PROXY
   - GEOIP,BR,PROXY
