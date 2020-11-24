@@ -127,6 +127,13 @@ rule-providers:
     path: ./ruleset/tld-not-cn.yaml
     interval: 86400
 
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+
   cncidr:
     type: http
     behavior: ipcidr
@@ -176,6 +183,7 @@ rules:
   - RULE-SET,google,DIRECT
   - RULE-SET,proxy,PROXY
   - RULE-SET,direct,DIRECT
+  - RULE-SET,telegramcidr,PROXY
   - GEOIP,,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,PROXY
@@ -211,6 +219,7 @@ rules:
   - RULE-SET,tld-not-cn,PROXY
   - RULE-SET,gfw,PROXY
   - RULE-SET,greatfire,PROXY
+  - RULE-SET,telegramcidr,PROXY
   - GEOIP,AE,PROXY
   - GEOIP,AU,PROXY
   - GEOIP,BR,PROXY
