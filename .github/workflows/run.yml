@@ -86,7 +86,6 @@ jobs:
 
       - name: Generate telegramcidr.txt file
         run: |
-          echo "payload:" > telegramcidr.txt
           curl -sSL ${telegram_cidr} | perl -ne '/(.+\/\d+)/ && print "  - |$1|\n"' | sed "s/|/'/g" >> telegramcidr.txt
 
       - name: Move files to publish directory
