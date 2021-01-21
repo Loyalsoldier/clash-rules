@@ -18,6 +18,7 @@ jobs:
           echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
           echo "custom_icloud=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/icloud.txt" >> $GITHUB_ENV
           echo "custom_tld_not_cn=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/tld-!cn.txt" >> $GITHUB_ENV
+          echo "custom_private=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/private.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_reject=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_proxy=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_direct=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt" >> $GITHUB_ENV
@@ -48,6 +49,12 @@ jobs:
         run: |
           echo "payload:" > apple.txt
           curl -sSL ${felixonmars_apple} | perl -ne '/^server=\/([^\/]+)\// && print "  - |+.$1|\n"' | sed "s/|/'/g" >> apple.txt
+
+      - name: Generate private.txt file
+        run: |
+          echo "payload:" > private.txt
+          curl -sSL ${custom_private} | awk -F ':' '/^full:/ {printf "  - |%s|\n", $2}' | sed "s/|/'/g" >> private.txt
+          curl -sSL ${custom_private} | awk -F ':' '/^domain:/ {printf "  - |+.%s|\n", $2}' | sed "s/|/'/g" >> private.txt
 
       - name: Generate direct.txt file
         run: |
@@ -91,7 +98,7 @@ jobs:
       - name: Move files to publish directory
         run: |
           mkdir -p publish
-          install -p {apple,icloud,google,proxy,direct,reject,gfw,greatfire,tld-not-cn,cncidr,lancidr,telegramcidr}.txt ./publish/
+          install -p {apple,icloud,google,proxy,direct,reject,private,gfw,greatfire,tld-not-cn,cncidr,lancidr,telegramcidr}.txt ./publish/
 
       - name: Release and upload assets
         uses: softprops/action-gh-release@v1
