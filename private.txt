@@ -1,0 +1,13 @@
+payload:
+  - 'router.asus.com'
+  - '+.lan'
+  - '+.localdomain'
+  - '+.example'
+  - '+.invalid'
+  - '+.localhost'
+  - '+.test'
+  - '+.local'
+  - '+.home.arpa'
+  - '+.msftconnecttest.com'
+  - '+.localhost.sec.qq.com'
+  - '+.localhost.ptlogin2.qq.com'
