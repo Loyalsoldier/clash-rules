@@ -116,7 +116,7 @@ jobs:
 
       - name: Git push assets to "release" branch
         run: |
-          cd publish
+          cd publish || exit 1
           git init
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -125,19 +125,10 @@ jobs:
           git commit -m "${{ env.RELEASE_NAME }}"
           git remote add origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f origin release
-          
+
       - name: Purge jsdelivr CDN
         run: |
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/greatfire.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt
-          curl https://purge.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt
+          cd publish || exit 1
+          for file in $(ls); do
+            curl -i "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/${file}"
+          done
