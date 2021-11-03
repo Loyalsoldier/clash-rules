@@ -226,6 +226,8 @@ rules:
   - RULE-SET,google,DIRECT
   - RULE-SET,proxy,PROXY
   - RULE-SET,direct,DIRECT
+  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,cncidr,DIRECT
   - RULE-SET,telegramcidr,PROXY
   - GEOIP,,DIRECT
   - GEOIP,CN,DIRECT
@@ -301,6 +303,7 @@ rules:
 
 ## 致谢
 
+- [@Loyalsoldier/geoip](https://github.com/Loyalsoldier/geoip)
 - [@Loyalsoldier/v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat)
 - [@Loyalsoldier/cn-blocked-domain](https://github.com/Loyalsoldier/cn-blocked-domain)
 - [@gfwlist/gfwlist](https://github.com/gfwlist/gfwlist)
