@@ -26,8 +26,9 @@ jobs:
           echo "Loyalsoldier_greatfire=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/greatfire.txt" >> $GITHUB_ENV
           echo "felixonmars_apple=https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf" >> $GITHUB_ENV
           echo "felixonmars_google=https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/google.china.conf" >> $GITHUB_ENV
-          echo "ipipnet_chinaiplist=https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt" >> $GITHUB_ENV
-          echo "telegram_cidr=https://core.telegram.org/resources/cidr.txt" >> $GITHUB_ENV
+          echo "cn_cidr=https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/cn.txt" >> $GITHUB_ENV
+          echo "lan_cidr=https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/private.txt" >> $GITHUB_ENV
+          echo "telegram_cidr=https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/telegram.txt" >> $GITHUB_ENV
         shell: bash
 
       - name: Checkout the "hidden" branch
@@ -91,16 +92,22 @@ jobs:
       - name: Generate cncidr.txt file
         run: |
           echo "payload:" > cncidr.txt
-          curl -sSL ${ipipnet_chinaiplist} | perl -ne '/^(\d{1,3}(\.\d{1,3}){3}\/\d{1,2})/ && print "  - |$1|\n"' | sed "s/|/'/g" >> cncidr.txt
+          curl -sSL ${cn_cidr} | perl -ne '/(.+\/\d+)/ && print "  - |$1|\n"' | sed "s/|/'/g" >> cncidr.txt
 
       - name: Generate telegramcidr.txt file
         run: |
+          echo "payload:" > telegramcidr.txt
           curl -sSL ${telegram_cidr} | perl -ne '/(.+\/\d+)/ && print "  - |$1|\n"' | sed "s/|/'/g" >> telegramcidr.txt
+
+      - name: Generate lancidr.txt file
+        run: |
+          echo "payload:" > lancidr.txt
+          curl -sSL ${lan_cidr} | perl -ne '/(.+\/\d+)/ && print "  - |$1|\n"' | sed "s/|/'/g" >> lancidr.txt
 
       - name: Move files to publish directory
         run: |
           mkdir -p publish
-          install -p {apple,icloud,google,proxy,direct,reject,private,gfw,greatfire,tld-not-cn,cncidr,lancidr,telegramcidr}.txt ./publish/
+          cp *.txt ./publish/
 
       - name: Release and upload assets
         uses: softprops/action-gh-release@v0.1.6
