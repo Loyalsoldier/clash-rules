@@ -220,6 +220,45 @@ rules:
   - MATCH,DIRECT
 ```
 
+#### `PROXY` policy 配置举例
+
+vmess:
+
+```yaml
+proxies:
+  - name: "PROXY"
+    type: vmess
+    server: server
+    port: 443
+    uuid: uuid
+    alterId: 32
+    cipher: auto
+    # udp: true
+    # tls: true
+    # skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    # network: ws
+    # ws-opts:
+    #   path: /path
+    #   headers:
+    #     Host: v2ray.com
+    #   max-early-data: 2048
+    #   early-data-header-name: Sec-WebSocket-Protocol
+```
+
+Shadowsocks:
+
+```yaml
+proxies:
+  - name: "PROXY"
+    type: ss
+    server: server
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: "password"
+    # udp: true
+```
+
 ## 激赏 | Donation
 
 - **比特币（BTC）bech32 地址**：bc1qfe4nxcanet4w4ph8pf6qqyf263y68vw26nv9j9
