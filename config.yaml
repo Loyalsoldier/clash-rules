@@ -24,18 +24,18 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
-    - '*.lan'
-    - '*.localdomain'
-    - '*.example'
-    - '*.invalid'
-    - '*.localhost'
-    - '*.test'
-    - '*.local'
-    - '*.home.arpa'
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
     - router.asus.com
     - localhost.sec.qq.com
     - localhost.ptlogin2.qq.com
-    - '+.msftconnecttest.com'
+    - "+.msftconnecttest.com"
 tun:
   enable: true
   stack: system
@@ -140,6 +140,20 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 36000
 
+  steam:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/steam.txt"
+    path: ./ruleset/steam.yaml
+    interval: 86400
+
+  steamcn:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/steam-cn.txt"
+    path: ./ruleset/steamcn.yaml
+    interval: 86400
+
 rules:
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
@@ -156,4 +170,6 @@ rules:
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
   - RULE-SET,telegramcidr,PROXY
+  - RULE-SET,steam,PROXY
+  - RULE-SET,steamcn,DIRECT
   - MATCH,PROXY
