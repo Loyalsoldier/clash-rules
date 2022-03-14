@@ -64,6 +64,12 @@
 - **需要直连的常见软件列表 applications.txt**：
   - [https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt](https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt)
   - [https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt](https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt)
+- **steam列表 steam.txt**：
+  - [https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/steam.txt](https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/steam.txt)
+  - [https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/steam.txt](https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/steam.txt)
+- **steam中国列表 steam.txt**：
+  - [https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/steam-cn.txt](https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/steam-cn.txt)
+  - [https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/steam-cn.txt](https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/steam-cn.txt)
 
 ### 使用方式
 
@@ -172,6 +178,20 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
     path: ./ruleset/applications.yaml
     interval: 86400
+
+  steam:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/steam.txt"
+    path: ./ruleset/steam.yaml
+    interval: 86400
+
+  steamcn:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/steam-cn.txt"
+    path: ./ruleset/steamcn.yaml
+    interval: 86400
 ```
 
 #### 白名单模式 Rules 配置方式（推荐）
@@ -196,6 +216,8 @@ rules:
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
   - RULE-SET,telegramcidr,PROXY
+  - RULE-SET,steam,PROXY
+  - RULE-SET,steamcn,DIRECT
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,PROXY
@@ -217,6 +239,8 @@ rules:
   - RULE-SET,gfw,PROXY
   - RULE-SET,greatfire,PROXY
   - RULE-SET,telegramcidr,PROXY
+  - RULE-SET,steam,PROXY
+  - RULE-SET,steamcn,DIRECT
   - MATCH,DIRECT
 ```
 

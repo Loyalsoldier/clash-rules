@@ -19,6 +19,7 @@ jobs:
           echo "custom_icloud=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/icloud.txt" >> $GITHUB_ENV
           echo "custom_tld_not_cn=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/tld-!cn.txt" >> $GITHUB_ENV
           echo "custom_private=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/private.txt" >> $GITHUB_ENV
+          echo "custom_steam=https://raw.githubusercontent.com/Loyalsoldier/domain-list-custom/release/steam.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_reject=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_proxy=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/proxy-list.txt" >> $GITHUB_ENV
           echo "Loyalsoldier_direct=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/direct-list.txt" >> $GITHUB_ENV
@@ -103,6 +104,18 @@ jobs:
         run: |
           echo "payload:" > lancidr.txt
           curl -sSL ${lan_cidr} | perl -ne '/(.+\/\d+)/ && print "  - |$1|\n"' | sed "s/|/'/g" >> lancidr.txt
+
+      - name: Generate steam.txt file
+        run: |
+          echo "payload:" > steam.txt
+          curl -sSL ${custom_steam} | grep -Ev "^(regexp|keyword):"  | perl -ne '/^(full:)([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)*)\n/ && print "  - |$2|\n"' | sed "s/|/'/g" >> steam.txt
+          curl -sSL ${custom_steam} | grep -Ev "^(regexp|keyword|full):"  | perl -ne '/^(domain:)([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)*)\n/ && print "  - |+.$2|\n"' | sed "s/|/'/g" >> steam.txt
+
+      - name: Generate steam-cn.txt file
+        run: |
+          echo "payload:" > steam-cn.txt
+          curl -sSL ${custom_steam} | grep -Ev "^(regexp|keyword):"  | perl -ne '/^(full:)([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)*)(:@cn)/ && print "  - |$2|\n"' | sed "s/|/'/g" >> steam-cn.txt
+          curl -sSL ${custom_steam} | grep -Ev "^(regexp|keyword|full):"  | perl -ne '/^(domain:)([-_a-zA-Z0-9]+(\.[-_a-zA-Z0-9]+)*)(:@cn)/ && print "  - |+.$2|\n"' | sed "s/|/'/g" >> steam-cn.txt
 
       - name: Move files to publish directory
         run: |
