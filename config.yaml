@@ -66,77 +66,77 @@ rule-providers:
   reject:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
     path: ./ruleset/reject.yaml
     interval: 36000
 
   icloud:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt"
     path: ./ruleset/icloud.yaml
     interval: 36000
 
   apple:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
     path: ./ruleset/apple.yaml
     interval: 36000
 
   google:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"
     path: ./ruleset/google.yaml
     interval: 36000
 
   proxy:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
     path: ./ruleset/proxy.yaml
     interval: 36000
 
   direct:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
     path: ./ruleset/direct.yaml
     interval: 36000
 
   private:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt"
     path: ./ruleset/private.yaml
     interval: 36000
 
   telegramcidr:
     type: http
     behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
     path: ./ruleset/telegramcidr.yaml
     interval: 36000
 
   cncidr:
     type: http
     behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"
     path: ./ruleset/cncidr.yaml
     interval: 36000
 
   lancidr:
     type: http
     behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
     path: ./ruleset/lancidr.yaml
     interval: 36000
 
   applications:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
     path: ./ruleset/applications.yaml
     interval: 36000
 
