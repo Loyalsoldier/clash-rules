@@ -4,6 +4,7 @@ payload:
   - PROCESS-NAME,naive
   - PROCESS-NAME,trojan
   - PROCESS-NAME,trojan-go
+  - PROCESS-NAME,sslocal
   - PROCESS-NAME,ss-local
   - PROCESS-NAME,privoxy
   - PROCESS-NAME,leaf
@@ -12,6 +13,7 @@ payload:
   - PROCESS-NAME,naive.exe
   - PROCESS-NAME,trojan.exe
   - PROCESS-NAME,trojan-go.exe
+  - PROCESS-NAME,sslocal.exe
   - PROCESS-NAME,ss-local.exe
   - PROCESS-NAME,privoxy.exe
   - PROCESS-NAME,leaf.exe
