@@ -1,0 +1,47 @@
+payload:
+  - PROCESS-NAME,v2ray
+  - PROCESS-NAME,xray
+  - PROCESS-NAME,naive
+  - PROCESS-NAME,trojan
+  - PROCESS-NAME,trojan-go
+  - PROCESS-NAME,sslocal
+  - PROCESS-NAME,ss-local
+  - PROCESS-NAME,privoxy
+  - PROCESS-NAME,leaf
+  - PROCESS-NAME,v2ray.exe
+  - PROCESS-NAME,xray.exe
+  - PROCESS-NAME,naive.exe
+  - PROCESS-NAME,trojan.exe
+  - PROCESS-NAME,trojan-go.exe
+  - PROCESS-NAME,sslocal.exe
+  - PROCESS-NAME,ss-local.exe
+  - PROCESS-NAME,privoxy.exe
+  - PROCESS-NAME,leaf.exe
+  - PROCESS-NAME,Surge
+  - PROCESS-NAME,Surge 2
+  - PROCESS-NAME,Surge 3
+  - PROCESS-NAME,Surge 4
+  - PROCESS-NAME,Surge%202
+  - PROCESS-NAME,Surge%203
+  - PROCESS-NAME,Surge%204
+  - PROCESS-NAME,Thunder
+  - PROCESS-NAME,DownloadService
+  - PROCESS-NAME,qBittorrent
+  - PROCESS-NAME,Transmission
+  - PROCESS-NAME,fdm
+  - PROCESS-NAME,aria2c
+  - PROCESS-NAME,Folx
+  - PROCESS-NAME,NetTransport
+  - PROCESS-NAME,uTorrent
+  - PROCESS-NAME,WebTorrent
+  - PROCESS-NAME,aria2c.exe
+  - PROCESS-NAME,BitComet.exe
+  - PROCESS-NAME,fdm.exe
+  - PROCESS-NAME,NetTransport.exe
+  - PROCESS-NAME,qbittorrent.exe
+  - PROCESS-NAME,Thunder.exe
+  - PROCESS-NAME,ThunderVIP.exe
+  - PROCESS-NAME,transmission-daemon.exe
+  - PROCESS-NAME,transmission-qt.exe
+  - PROCESS-NAME,uTorrent.exe
+  - PROCESS-NAME,WebTorrent.exe
