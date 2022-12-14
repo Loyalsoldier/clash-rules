@@ -45,3 +45,5 @@ payload:
   - PROCESS-NAME,transmission-qt.exe
   - PROCESS-NAME,uTorrent.exe
   - PROCESS-NAME,WebTorrent.exe
+  - PROCESS-NAME,Motrix.exe
+  - PROCESS-NAME,motrix
