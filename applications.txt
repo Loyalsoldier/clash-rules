@@ -50,7 +50,9 @@ payload:
   - PROCESS-NAME,Surge%204
   - PROCESS-NAME,BitComet
   - PROCESS-NAME,BitComet.exe
+  - PROCESS-NAME,BitComet_x64.exe
   - PROCESS-NAME,DownloadService
+  - PROCESS-NAME,DownloadSDKServer.exe
   - PROCESS-NAME,Folx
   - PROCESS-NAME,NeatDM
   - PROCESS-NAME,NeatDM.exe
