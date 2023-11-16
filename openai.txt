@@ -25,13 +25,13 @@ payload:
   - DOMAIN,challenges.cloudflare.com
   # Other AI chat providers
   # bard
-- DOMAIN-SUFFIX,bard.google.com
+  - DOMAIN-SUFFIX,bard.google.com
 
   #cloude
-- DOMAIN-SUFFIX,claude.ai
-- DOMAIN-SUFFIX,anthropic.com
-- DOMAIN-SUFFIX,hsforms.net
+  - DOMAIN-SUFFIX,claude.ai
+  - DOMAIN-SUFFIX,anthropic.com
+  - DOMAIN-SUFFIX,hsforms.net
 
   # Jetbrains AI Assistant
-- DOMAIN-SUFFIX,grazie.aws.intellij.net
-- DOMAIN-SUFFIX,grazie.ai
+  - DOMAIN-SUFFIX,grazie.aws.intellij.net
+  - DOMAIN-SUFFIX,grazie.ai
