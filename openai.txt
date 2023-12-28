@@ -1,0 +1,40 @@
+payload:
+  - DOMAIN-SUFFIX,ai.com
+  - DOMAIN-SUFFIX,auth0.com
+  - DOMAIN-SUFFIX,openai.com
+  - DOMAIN-SUFFIX,auth0.openai.com
+  - DOMAIN-SUFFIX,chat.openai.com
+  - DOMAIN-SUFFIX,ios.chat.openai.com
+  - DOMAIN-SUFFIX,pay.openai.com
+  - DOMAIN-SUFFIX,chat.openai.com.cdn.cloudflare.net
+  - DOMAIN-SUFFIX,challenges.cloudflare.com
+  - DOMAIN-SUFFIX,featuregates.org
+  - DOMAIN-SUFFIX,identrust.com
+  - DOMAIN-SUFFIX,intercom.io
+  - DOMAIN-SUFFIX,invoice.stripe.com
+  - DOMAIN-SUFFIX,js.intercomcdn.com
+  - DOMAIN-SUFFIX,chatgpt.com
+  - DOMAIN-SUFFIX,platform.openai.com
+  - DOMAIN-SUFFIX,oaistatic.com
+  - DOMAIN-SUFFIX,oaiusercontent.com
+  - DOMAIN-SUFFIX,statsigapi.net
+  - DOMAIN-SUFFIX,stripe.com
+  - DOMAIN-SUFFIX,arkoselabs.com
+  - DOMAIN-SUFFIX,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+  - DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net
+  - DOMAIN-SUFFIX,production-openaicom-storage.azureedge.net
+  - DOMAIN-SUFFIX,cdn.auth0.com
+  - DOMAIN,openaiapi-site.azureedge.net
+  - DOMAIN,challenges.cloudflare.com
+  # Other AI chat providers
+  # bard
+  - DOMAIN-SUFFIX,bard.google.com
+
+  #cloude
+  - DOMAIN-SUFFIX,claude.ai
+  - DOMAIN-SUFFIX,anthropic.com
+  - DOMAIN-SUFFIX,hsforms.net
+
+   # Jetbrains AI Assistant
+  - DOMAIN-SUFFIX,grazie.aws.intellij.net
+  - DOMAIN-SUFFIX,grazie.ai
