@@ -3874,7 +3874,6 @@ payload:
   - '+.ontrac.com'
   - '+.oopsforum.com'
   - '+.open.com.hk'
-  - '+.openai.com'
   - '+.openallweb.com'
   - '+.opendemocracy.net'
   - '+.opendn.xyz'
