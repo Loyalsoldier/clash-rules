@@ -1,4 +1,6 @@
 payload:
+  - PROCESS-NAME,browser.exe
+  - PROCESS-NAME,wegame.exe
   - PROCESS-NAME,hysteria
   - PROCESS-NAME,hysteria.exe
   - PROCESS-NAME,leaf
