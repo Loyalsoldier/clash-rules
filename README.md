@@ -14,13 +14,13 @@
 
 - Clash Premium **命令行**版：
   - [官方版](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-premium)（适用于 Windows、macOS、Linux、OpenWRT 等多种平台）
-  - [衍生版 Clash.Meta](https://github.com/MetaCubeX/Clash.Meta/releases)（适用于 Windows、macOS、Linux、OpenWRT 等多种平台）
+  - [衍生版 mihomo](https://github.com/MetaCubeX/mihomo)（适用于 Windows、macOS、Linux、OpenWRT 等多种平台）
 - Clash Premium **图形用户界面**版：
   - [ClashN](https://github.com/2dust/clashN/releases)（适用于 Windows）
   - [ClashX Pro](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clashx-pro)（适用于 macOS）
-  - [Clash-verge](https://github.com/zzzgydi/clash-verge/releases)（适用于 Windows、macOS、Linux）
+  - [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev/releases)（适用于 Windows、macOS、Linux）
   - [Clash for Windows](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-for-windows)（适用于 Windows、macOS、Linux）
-  - [Clash for Android](https://apkpure.com/clash-for-android/com.github.kr328.clash/versions)（适用于 Android）
+  - [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid))（适用于 Android）
 
 ## 规则文件地址及使用方式
 
