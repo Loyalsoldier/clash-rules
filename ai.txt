@@ -1,4 +1,7 @@
 payload:
+  - '+.chatgpt.com'
+  - '+.chatgptvideo.xyz'
+  - '+.chatgptvideob.buzz'  
   - '+.openai.com'
   - 'chat.openai.com.cdn.cloudflare.net'
   - 'openaiapi-site.azureedge.net'
