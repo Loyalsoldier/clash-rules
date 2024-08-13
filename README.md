@@ -18,7 +18,7 @@
 - Clash Premium **图形用户界面**版：
   - [ClashN](https://github.com/2dust/clashN/releases)（适用于 Windows）
   - [ClashX Pro](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clashx-pro)（适用于 macOS）
-  - [Clash-verge](https://github.com/zzzgydi/clash-verge/releases)（适用于 Windows、macOS、Linux）
+  - [Clash-verge](https://github.com/clash-verge-rev/clash-verge-rev)（适用于 Windows、macOS、Linux）
   - [Clash for Windows](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-for-windows)（适用于 Windows、macOS、Linux）
   - [Clash for Android](https://apkpure.com/clash-for-android/com.github.kr328.clash/versions)（适用于 Android）
 
