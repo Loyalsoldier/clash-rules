@@ -21,7 +21,7 @@
   cncidr:
     type: http
     behavior: ipcidr
-    url: https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_All_Clash.yaml
+    url: https://raw.githubusercontent.com/kurdsvv/rules/refs/heads/master/Clash-Rule/cncidr.txt
     path: ./ruleset/cncidr.yaml
     interval: 259200
 
