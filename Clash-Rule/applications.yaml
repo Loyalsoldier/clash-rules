@@ -1,0 +1,20 @@
+payload:
+  - PROCESS-NAME,GoogleUpdate.exe
+  - PROCESS-NAME,AutoUpdate.exe
+  - PROCESS-NAME,Bandizip.exe
+  - PROCESS-NAME,bz.exe
+  - PROCESS-NAME,Notepad3.exe
+  - PROCESS-NAME,WinStore.App.exe
+  - PROCESS-NAME,MicrosoftEdge.exe
+  - PROCESS-NAME,SearchUI.exe
+  - PROCESS-NAME,Microsoft.ECApp.exe
+  - PROCESS-NAME,MicrosoftEdgeCP.exe
+  - PROCESS-NAME,MicrosoftEdgeSH.exe
+  - PROCESS-NAME,MicrosoftEdge.exe
+  - PROCESS-NAME,XBox.TCUI.exe
+  - PROCESS-NAME,msedgewebview2.exe
+  - PROCESS-NAME,smartscreen.exe
+  - PROCESS-NAME,MicrosoftEdgeUpdate.exe
+  - PROCESS-NAME,GoogleUpdate.exe
+  - PROCESS-NAME,updater.exe
+  - PROCESS-NAME,AutoUpdate.exe
