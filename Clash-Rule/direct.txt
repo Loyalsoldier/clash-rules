@@ -75,6 +75,5 @@ payload:
 - '+.49zyvideoplayurl.com'
 - '+.cdnkan.top'
 - '+.mirror.ghproxy.com'
-
-- '+.5112233.xyz'
-
+- '+.us.kg'
+- '+.cloudns.net'
