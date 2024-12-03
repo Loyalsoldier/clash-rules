@@ -77,3 +77,4 @@ payload:
 - '+.mirror.ghproxy.com'
 - '+.us.kg'
 - '+.cloudns.net'
+- '+.outlook.live.com'
