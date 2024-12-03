@@ -12,6 +12,7 @@
 #### Rule Providers 配置方式
 
 ```yaml
+rule-providers:
   Myrejetct:
     type: http
     behavior: domain
@@ -125,11 +126,13 @@
 - 如你不希望进行 DNS 解析，可在 `GEOIP` 规则的最后加上 `,no-resolve`，如 `GEOIP,CN,DIRECT,no-resolve`。
 
 ```yaml
+rules:
   - RULE-SET,DropIP,REJECT-DROP
   - RULE-SET,reject,REJECT
   - RULE-SET,applications,REJECT
   #- RULE-SET,Myrejetct,REJECT
   - RULE-SET,proxy,🚀 节点选择
+  - RULE-SET,cfdomain,🚀 节点选择
   - RULE-SET,private,♻️ 自动选择
   - RULE-SET,openai,♻️ 自动选择
   - RULE-SET,telegramcidr,🌈 Telegram
