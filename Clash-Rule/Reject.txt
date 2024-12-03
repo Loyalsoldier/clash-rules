@@ -14,7 +14,6 @@ payload:
 - '+.facebook.net'
 - '+.internetdownloadmanager.com'
 - '+.ldmnq.com'
-- '+.live.com'
 - '+.m.qq.com'
 - '+.m.taobao.com'
 - '+.pps.tv'
