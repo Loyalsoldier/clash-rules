@@ -106,7 +106,6 @@ payload:
 - '+.ntruss.com'
 - '+.nunuyingyuan.com'
 - '+.nv7s.com'
-- '+.oaistatic.com'
 - '+.olemovienews.com'
 - '+.olevod.com'
 - '+.pandalive.co.kr'
