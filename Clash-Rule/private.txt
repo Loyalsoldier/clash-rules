@@ -54,4 +54,8 @@ payload:
 - '+.cf.090227.xyz'
 - '+.api-iptest.bestip.one'
 - '+.5112233.xyz'
-#代理域名
+#国际华为
+- '+.huaweicloud.com'
+- '+.console-intl.huaweicloud.com'
+- '+.hc-cdn.com'
+- '+.myhuaweicloud.com'
