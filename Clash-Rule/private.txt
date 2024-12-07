@@ -31,6 +31,7 @@ payload:
 - '+.xiaobaotv.net'
 - '+.xiaoheimi.net'
 - '+.xiaoxintv.net'
+- '+.mzyglc.xyz'
 #代理域名
 - '+.url.happyhour.lol'
 - '+.twitchcdn.net'
