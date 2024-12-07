@@ -99,7 +99,6 @@ payload:
 - '+.m3pd.com'
 - '+.meizhiyuan.cc'
 - '+.mrjav.net'
-- '+.mzyglc.xyz'
 - '+.niceso.fun'
 - '+.nnyy.in'
 - '+.noodlemagazine.com'
