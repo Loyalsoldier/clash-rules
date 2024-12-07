@@ -1,3 +1,4 @@
+##绿色
 whoer.net
 whatismyip.com
 singapore.com
@@ -20,8 +21,10 @@ time.is
 time.cloudflare.com
 udacity.com
 malaysia.com
-######################
 
+##################################################################
+
+##黄色
 proxy.xxxxxxxx.tk
 udemy.com
 sp.rweek.top
