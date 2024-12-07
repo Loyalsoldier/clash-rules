@@ -399,7 +399,6 @@ payload:
 - 'gk.sina.cn'
 - 'gm.mmstat.com'
 - 'go.ezodn.com'
-- 'go.microsoft.com'
 - 'googleads.g.doubleclick.net'
 - 'grs.dbankcloud.asia'
 - 'grs.dbankcloud.cn'
