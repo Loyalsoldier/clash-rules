@@ -76,7 +76,6 @@ payload:
 ##69shu
 - '+.123du.vip'
 - '+.1853723.xyz'
-- '+.51cg1.com'
 - '+.69shux.net'
 - '+.69shuba.cx'
 - '+.69shu.me'
