@@ -1755,6 +1755,7 @@ payload:
   - '+.fdc64.de'
   - '+.fdc64.org'
   - '+.fdc89.jp'
+  - '+.feature.fm'
   - '+.feedburner.com'
   - '+.feeder.co'
   - '+.feedly.com'
