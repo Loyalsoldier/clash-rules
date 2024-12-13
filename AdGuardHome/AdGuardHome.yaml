@@ -32,7 +32,8 @@ dns:
   upstream_mode: load_balance
   fastest_timeout: 1s
   allowed_clients: []
-  disallowed_clients: []
+  disallowed_clients:
+    - 192.168.0.102
   blocked_hosts:
     - version.bind
     - id.server
@@ -48,9 +49,9 @@ dns:
   aaaa_disabled: true
   enable_dnssec: false
   edns_client_subnet:
-    custom_ip: ""
-    enabled: false
-    use_custom: false
+    custom_ip: 221.183.89.121
+    enabled: true
+    use_custom: true
   max_goroutines: 300
   handle_ddr: true
   ipset: []
@@ -84,14 +85,14 @@ tls:
 querylog:
   dir_path: ""
   ignored: []
-  interval: 2160h
+  interval: 168h
   size_memory: 1000
   enabled: true
   file_enabled: true
 statistics:
   dir_path: ""
   ignored: []
-  interval: 24h
+  interval: 2160h
   enabled: true
 filters:
   - enabled: true
@@ -137,6 +138,7 @@ user_rules:
   - '@@||vcdn.fapcat.com^$important'
   - '@@||acdn3.fapcat.com^$important'
   - '||update.googleapis.com^$important'
+  - ""
 dhcp:
   enabled: false
   interface_name: ""
@@ -155,12 +157,17 @@ dhcp:
     ra_slaac_only: false
     ra_allow_slaac: false
 filtering:
-  blocking_ipv4: ""
-  blocking_ipv6: ""
+  blocking_ipv4: 127.0.0.2
+  blocking_ipv6: '::'
   blocked_services:
     schedule:
       time_zone: Local
-    ids: []
+    ids:
+      - zhihu
+      - xboxlive
+      - twitter
+      - qq
+      - facebook
   protection_disabled_until: null
   safe_search:
     enabled: false
@@ -170,7 +177,7 @@ filtering:
     pixabay: true
     yandex: true
     youtube: true
-  blocking_mode: default
+  blocking_mode: custom_ip
   parental_block_host: family-block.dns.adguard.com
   safebrowsing_block_host: standard-block.dns.adguard.com
   rewrites: []
@@ -188,7 +195,7 @@ clients:
   runtime_sources:
     whois: true
     arp: true
-    rdns: false
+    rdns: true
     dhcp: true
     hosts: true
   persistent: []
