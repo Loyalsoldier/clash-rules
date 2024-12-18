@@ -134,3 +134,6 @@ payload:
 - 'gdfpsec.gifshow.com'
 - 'cn-hnld-ccc-live-tracker-01.chat.bilibili.com'
 - 'cn-sdqd-ccc-live-tracker-04.chat.bilibili.com'
+- 'dig.bdurl.net'
+- 'gdfpsec.ksapisrv.com'
+- 'ping.pinyin.sogou.com'
