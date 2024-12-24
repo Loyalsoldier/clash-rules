@@ -137,3 +137,4 @@ payload:
 - 'dig.bdurl.net'
 - 'gdfpsec.ksapisrv.com'
 - 'ping.pinyin.sogou.com'
+- 'xp.apple.com'
