@@ -26,8 +26,7 @@ dns:
     - quic://dns.alidns.com:853
   upstream_dns_file: ""
   bootstrap_dns:
-    - 223.6.6.6
-    - 223.5.5.5
+    - 202.46.34.74
   fallback_dns: []
   upstream_mode: load_balance
   fastest_timeout: 1s
@@ -49,7 +48,7 @@ dns:
   aaaa_disabled: true
   enable_dnssec: false
   edns_client_subnet:
-    custom_ip: 221.183.89.121
+    custom_ip: 202.46.34.74
     enabled: true
     use_custom: true
   max_goroutines: 300
