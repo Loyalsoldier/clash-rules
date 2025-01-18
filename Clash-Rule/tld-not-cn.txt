@@ -86,3 +86,5 @@ payload:
 - '+.ahcdn.com'
 - '+.chatgpt.com'
 - '+.oaistatic.com'
+- '+.cloudns.net'
+- '+.us.kg'
