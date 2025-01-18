@@ -84,4 +84,5 @@ payload:
 - '+.youtube.com'
 - '+.fapcat.com'
 - '+.ahcdn.com'
-
+- '+.chatgpt.com'
+- '+.oaistatic.com'
