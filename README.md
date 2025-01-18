@@ -108,14 +108,28 @@ rule-providers:
     behavior: domain
     url: "https://raw.githubusercontent.com/kurdsvv/rules/refs/heads/master/Clash-Rule/icloud.txt"
     path: ./ruleset/icloud.yaml
-    interval: 86400
-
+    interval: 259200
+  
   apple:
     type: http
     behavior: domain
     url: "https://raw.githubusercontent.com/kurdsvv/rules/refs/heads/master/Clash-Rule/apple.txt"
     path: ./ruleset/apple.yaml
-    interval: 86400
+    interval: 259200
+
+  tld-cn:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/kurdsvv/rules/refs/heads/master/Clash-Rule/tld-cn.txt"
+    path: ./ruleset/tld-cn.yaml
+    interval: 259200
+
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/kurdsvv/rules/refs/heads/master/Clash-Rule/tld-not-cn.txt"
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 259200
 ```
 
 #### 白名单模式 Rules 配置方式（推荐）
@@ -130,18 +144,18 @@ rules:
   - RULE-SET,DropIP,REJECT-DROP
   - RULE-SET,reject,REJECT
   - RULE-SET,applications,REJECT
-  #- RULE-SET,Myrejetct,REJECT
-  - RULE-SET,proxy,🚀 节点选择
-  - RULE-SET,cfdomain,🚀 节点选择
+  - RULE-SET,Myrejetct,REJECT
   - RULE-SET,private,♻️ 自动选择
-  - RULE-SET,openai,♻️ 自动选择
+  - RULE-SET,proxy,🚀 节点选择
+  - RULE-SET,cfdomain,cf-conn
+  - RULE-SET,openai,♻️ 自动选择 
   - RULE-SET,telegramcidr,🌈 Telegram
   - RULE-SET,direct,DIRECT
   - RULE-SET,cncidr,DIRECT
   - RULE-SET,icloud,DIRECT
   - RULE-SET,apple,DIRECT
   - RULE-SET,Google,🚀 节点选择
-  - RULE-SET,Cloudflare,Cloudafare-conn
+  - RULE-SET,Cloudflare,cf-conn
   - RULE-SET,lancidr,DIRECT
   - MATCH,MATCH
 ```
