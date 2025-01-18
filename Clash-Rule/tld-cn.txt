@@ -1,5 +1,8 @@
 payload:
   - '+.bilibili.com'
+  - '+.bilivideo.cn'
+  - '+.bilivideo.com'
+  - '+.bilivideo.net'
   - '+.alibaba-inc.com'
   - '+.alibaba.com'
   - '+.alibaba.net'
