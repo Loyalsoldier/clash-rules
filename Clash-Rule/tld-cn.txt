@@ -62,7 +62,7 @@ payload:
   - '+.qidian.com'
   - '+.qihubf.com'
   - '+.qiniup.com'
-  - '+.sanguosha.com
+  - '+.sanguosha.com'
   - '+.shanshanku.com'
   - '+.smxjysm.com'
   - '+.statically.io'
