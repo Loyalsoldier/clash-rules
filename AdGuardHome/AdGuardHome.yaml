@@ -23,7 +23,7 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   upstream_dns:
-    - quic://dns.alidns.com:853
+    - '#quic://dns.alidns.com:853'
   upstream_dns_file: ""
   bootstrap_dns:
     - 202.46.34.74
@@ -48,7 +48,7 @@ dns:
   aaaa_disabled: true
   enable_dnssec: false
   edns_client_subnet:
-    custom_ip: 202.46.34.74
+    custom_ip: 221.183.89.117
     enabled: true
     use_custom: true
   max_goroutines: 300
@@ -167,6 +167,110 @@ filtering:
       - twitter
       - qq
       - facebook
+      - 4chan
+      - 500px
+      - 9gag
+      - activision_blizzard
+      - aliexpress
+      - amazon
+      - amazon_streaming
+      - amino
+      - battle_net
+      - betano
+      - betfair
+      - betway
+      - bigo_live
+      - blaze
+      - blizzard_entertainment
+      - bluesky
+      - box
+      - canais_globo
+      - claro
+      - clubhouse
+      - coolapk
+      - crunchyroll
+      - dailymotion
+      - deezer
+      - directvgo
+      - discord
+      - discoveryplus
+      - disneyplus
+      - douban
+      - dropbox
+      - ebay
+      - electronic_arts
+      - epic_games
+      - espn
+      - fifa
+      - flickr
+      - globoplay
+      - gog
+      - hbomax
+      - hulu
+      - icloud_private_relay
+      - iheartradio
+      - imgur
+      - instagram
+      - iqiyi
+      - kakaotalk
+      - kik
+      - kook
+      - lazada
+      - leagueoflegends
+      - line
+      - linkedin
+      - lionsgateplus
+      - looke
+      - mail_ru
+      - mastodon
+      - mercado_libre
+      - minecraft
+      - nebula
+      - netflix
+      - nintendo
+      - nvidia
+      - ok
+      - olvid
+      - onlyfans
+      - origin
+      - paramountplus
+      - pinterest
+      - playstation
+      - plenty_of_fish
+      - plex
+      - pluto_tv
+      - privacy
+      - rakuten_viki
+      - reddit
+      - riot_games
+      - roblox
+      - rockstar_games
+      - samsung_tv_plus
+      - shein
+      - shopee
+      - signal
+      - skype
+      - snapchat
+      - soundcloud
+      - spotify
+      - temu
+      - tidal
+      - tiktok
+      - tinder
+      - tumblr
+      - twitch
+      - ubisoft
+      - valorant
+      - viber
+      - vimeo
+      - vk
+      - voot
+      - wargaming
+      - wechat
+      - whatsapp
+      - wizz
+      - xiaohongshu
+      - yy
   protection_disabled_until: null
   safe_search:
     enabled: false
@@ -176,7 +280,7 @@ filtering:
     pixabay: true
     yandex: true
     youtube: true
-  blocking_mode: custom_ip
+  blocking_mode: default
   parental_block_host: family-block.dns.adguard.com
   safebrowsing_block_host: standard-block.dns.adguard.com
   rewrites: []
@@ -194,7 +298,7 @@ clients:
   runtime_sources:
     whois: true
     arp: true
-    rdns: true
+    rdns: false
     dhcp: true
     hosts: true
   persistent: []
