@@ -82,3 +82,5 @@ payload:
   - PROCESS-NAME,xdm.exe
   - PROCESS-NAME,xdman
   - PROCESS-NAME,xdman.exe
+  - PROCESS-NAME,zerotier-one
+  - PROCESS-NAME,zerotier-one_x64.exe
