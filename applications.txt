@@ -84,4 +84,6 @@ payload:
   - PROCESS-NAME,xdman.exe
   - PROCESS-NAME,gost
   - PROCESS-NAME,gost.exe
+  - PROCESS-NAME,zerotier-one
+  - PROCESS-NAME,zerotier-one_x64.exe
 
