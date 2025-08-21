@@ -1,4 +1,8 @@
 payload:
+  - PROCESS-NAME,frpc
+  - PROCESS-NAME,frpc.exe
+  - PROCESS-NAME,frps
+  - PROCESS-NAME,frps.exe
   - PROCESS-NAME,hysteria
   - PROCESS-NAME,hysteria.exe
   - PROCESS-NAME,leaf
@@ -23,6 +27,12 @@ payload:
   - PROCESS-NAME,ss-local.exe
   - PROCESS-NAME,sslocal
   - PROCESS-NAME,sslocal.exe
+  - PROCESS-NAME,tailscale
+  - PROCESS-NAME,tailscale.exe
+  - PROCESS-NAME,tailscaled
+  - PROCESS-NAME,tailscaled.exe
+  - PROCESS-NAME,Tailscale
+  - PROCESS-NAME,Tailscale.exe
   - PROCESS-NAME,tinyvpn
   - PROCESS-NAME,tinyvpn.exe
   - PROCESS-NAME,trojan
