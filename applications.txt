@@ -51,6 +51,9 @@ payload:
   - PROCESS-NAME,v2ray.exe
   - PROCESS-NAME,xray
   - PROCESS-NAME,xray.exe
+  - PROCESS-NAME,zerotier-one
+  - PROCESS-NAME,zerotier-one.exe
+  - PROCESS-NAME,zerotier-one_x64.exe
   - PROCESS-NAME,Surge
   - PROCESS-NAME,Surge 2
   - PROCESS-NAME,Surge 3
