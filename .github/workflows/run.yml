@@ -32,7 +32,7 @@ jobs:
         shell: bash
 
       - name: Checkout the "hidden" branch
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: hidden
 
