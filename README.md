@@ -1,6 +1,6 @@
 # 简介 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Loyalsoldier/clash-rules/total?logo=github) ![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/Loyalsoldier/clash-rules/latest/total?logo=github) [![jsdelivr stats](https://data.jsdelivr.com/v1/package/gh/Loyalsoldier/clash-rules/badge?style=rounded)](https://www.jsdelivr.com/package/gh/Loyalsoldier/clash-rules)
 
-本项目生成适用于 [**Clash Premium 内核**](https://github.com/Dreamacro/clash/releases/tag/premium)的规则集（RULE-SET），同时适用于所有使用 Clash Premium 内核的 Clash 图形用户界面（GUI）客户端。使用 GitHub Actions 北京时间每天早上 6:30 自动构建，保证规则最新。
+本项目生成适用于 [**Clash Premium 内核**](https://github.com/Dreamacro/clash/releases/tag/premium)的规则集（RULE-SET），同时适用于所有使用 Clash Premium 内核的 Clash 图形用户界面（GUI）客户端，包括但不限于 [ClashX Pro](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clashx-pro)、[clash-party](https://github.com/mihomo-party-org/clash-party)、[clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev)、[Clash for Windows](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-for-windows)、[clashmi](https://github.com/KaringX/clashmi)、[Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)、[OpenClash](https://github.com/vernesong/OpenClash)。使用 GitHub Actions 北京时间每天早上 6:30 自动构建，保证规则最新。
 
 ## 说明
 
@@ -8,19 +8,21 @@
 
 本项目的规则集（RULE-SET）只适用于 Clash **Premium** 版本。Clash Premium 相对于普通版，增加了 **TUN 增强模式**，能接管设备所有 TCP 和 UDP 流量。
 
-### Clash Premium 各版本下载地址
+### Clash Premium 客户端下载地址
 
 > ⚠️ 由于 Clash 及其部分周边生态项目于 2023 年 11 月上旬删库跑路，现提供部分官方原版安装包、可执行文件，详情见 [**hidden**](https://github.com/Loyalsoldier/clash-rules/tree/hidden) 分支。
 
 - Clash Premium **命令行**版：
-  - [官方版](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-premium)（适用于 Windows、macOS、Linux、OpenWRT 等多种平台）
-  - [衍生版 Clash.Meta](https://github.com/MetaCubeX/Clash.Meta/releases)（适用于 Windows、macOS、Linux、OpenWRT 等多种平台）
+  - [官方版](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-premium)（适用于 Windows、macOS、Linux、OpenWRT 等多种平台，**已停止更新**）
+  - [mihomo](https://github.com/MetaCubeX/mihomo/releases)（适用于 Windows、macOS、Linux、Android、OpenWRT 等多种平台）
 - Clash Premium **图形用户界面**版：
-  - [ClashN](https://github.com/2dust/clashN/releases)（适用于 Windows）
-  - [ClashX Pro](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clashx-pro)（适用于 macOS）
-  - [Clash-verge](https://github.com/zzzgydi/clash-verge/releases)（适用于 Windows、macOS、Linux）
-  - [Clash for Windows](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-for-windows)（适用于 Windows、macOS、Linux）
-  - [Clash for Android](https://apkpure.com/clash-for-android/com.github.kr328.clash/versions)（适用于 Android）
+  - [ClashX Pro](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clashx-pro)（适用于 macOS，**已停止更新**）
+  - [clash-party](https://github.com/mihomo-party-org/clash-party)（适用于 Windows、macOS、Linux）
+  - [clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev)（适用于 Windows、macOS、Linux）
+  - [Clash for Windows](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-for-windows)（适用于 Windows、macOS、Linux，**已停止更新**）
+  - [clashmi](https://github.com/KaringX/clashmi)（适用于 Windows、macOS、Linux、iOS、Android）
+  - [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)（适用于 Android）
+  - [OpenClash](https://github.com/vernesong/OpenClash)（适用于 OpenWRT）
 
 ## 规则文件地址及使用方式
 
