@@ -34,7 +34,7 @@ jobs:
         shell: bash
 
       - name: Checkout the "hidden" branch
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: hidden
 
