@@ -226,4 +226,10 @@ rules:
 
 ## 项目 Star 数增长趋势
 
-[![Stargazers over time](https://starchart.cc/Loyalsoldier/clash-rules.svg)](https://starchart.cc/Loyalsoldier/clash-rules)
+<a href="https://www.star-history.com/?repos=Loyalsoldier%2Fclash-rules&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Loyalsoldier/clash-rules&type=date&theme=dark&legend=top-left&sealed_token=fuFL9N76VEotF7KNE9vlRbIXDmg5rXtj332rbCpxllm544E5CF4OBASOF2LXQKsTEGYNOJROuXBvra2Df-bCbwAWHaRBRg0BLmkTe7AJKbag4r9B2hCcpQ" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Loyalsoldier/clash-rules&type=date&legend=top-left&sealed_token=fuFL9N76VEotF7KNE9vlRbIXDmg5rXtj332rbCpxllm544E5CF4OBASOF2LXQKsTEGYNOJROuXBvra2Df-bCbwAWHaRBRg0BLmkTe7AJKbag4r9B2hCcpQ" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Loyalsoldier/clash-rules&type=date&legend=top-left&sealed_token=fuFL9N76VEotF7KNE9vlRbIXDmg5rXtj332rbCpxllm544E5CF4OBASOF2LXQKsTEGYNOJROuXBvra2Df-bCbwAWHaRBRg0BLmkTe7AJKbag4r9B2hCcpQ" />
+ </picture>
+</a>
