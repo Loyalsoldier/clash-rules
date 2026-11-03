@@ -13,8 +13,8 @@
 > ⚠️ 由于 Clash 及其部分周边生态项目于 2023 年 11 月上旬删库跑路，现提供部分官方原版安装包、可执行文件，详情见 [**hidden**](https://github.com/Loyalsoldier/clash-rules/tree/hidden) 分支。
 
 - Clash Premium **命令行**版：
-  - [官方版](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-premium)（适用于 Windows、macOS、Linux、OpenWRT 等多种平台，**已停止更新**）
-  - [mihomo](https://github.com/MetaCubeX/mihomo/releases)（适用于 Windows、macOS、Linux、Android、OpenWRT 等多种平台）
+  - [官方版](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-premium)（适用于 Windows、macOS、Linux、OpenWrt 等多种平台，**已停止更新**）
+  - [mihomo](https://github.com/MetaCubeX/mihomo/releases)（适用于 Windows、macOS、Linux、Android、OpenWrt 等多种平台）
 - Clash Premium **图形用户界面**版：
   - [ClashX Pro](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clashx-pro)（适用于 macOS，**已停止更新**）
   - [clash-party](https://github.com/mihomo-party-org/clash-party)（适用于 Windows、macOS、Linux）
@@ -22,7 +22,7 @@
   - [Clash for Windows](https://github.com/Loyalsoldier/clash-rules/tree/hidden/software/clash-for-windows)（适用于 Windows、macOS、Linux，**已停止更新**）
   - [clashmi](https://github.com/KaringX/clashmi)（适用于 Windows、macOS、Linux、iOS、Android）
   - [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)（适用于 Android）
-  - [OpenClash](https://github.com/vernesong/OpenClash)（适用于 OpenWRT）
+  - [OpenClash](https://github.com/vernesong/OpenClash)（适用于 OpenWrt）
 
 ## 规则文件地址及使用方式
 
